@@ -7,11 +7,11 @@ class App extends Component {
     username: "Fifou"
   };
 
-  changeUsernameHandler = () => {
+  changeUsernameHandler = username => {
     this.setState({
-      username: "Best React developer ever"
-    })
-  }
+      username: username
+    });
+  };
   render() {
     return (
       <div className="App">
@@ -21,7 +21,13 @@ class App extends Component {
         <UserOutput name="Maxime" />
         <UserOutput name="Thomas" />
         <UserOutput name={this.state.username} />
-        <button onClick={this.changeUsernameHandler}>Change Fifou's username (state)</button>
+        <button
+          onClick={() =>
+            this.changeUsernameHandler("Best React developer ever")
+          }
+        >
+          Change Fifou's username (state)
+        </button>
       </div>
     );
   }
