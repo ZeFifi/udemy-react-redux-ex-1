@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import UserInput from "./components/UserInput/UserInput";
 import UserOutput from "./components/UserOutput/UserOutput";
 
+import "./App.css";
+
 class App extends Component {
   state = {
     username: "Fifou"
@@ -22,7 +24,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <UserInput usernameChange={this.inputUpdateUsernameHandler} />
+        <UserInput usernameChange={this.inputUpdateUsernameHandler} name={this.state.username} />
         <UserOutput name="Yosra" />
         <UserOutput name="Philippe" />
         <UserOutput name="Maxime" />
